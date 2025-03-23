@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: agar-solana-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: ENCRYPTION_KEY
+        sync: false
+      - key: USDC_MINT
+        value: EPjFWdd5AufqSSqeM2q6yZH7vjZgASkZ3ZQm4jL5JvhH
+      - key: SOLANA_RPC_URL
+        value: https://api.devnet.solana.com
+    healthCheckPath: /health
